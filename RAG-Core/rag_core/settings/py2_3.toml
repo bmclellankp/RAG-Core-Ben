@@ -1,0 +1,50 @@
+[py2_3]
+system="""\
+"""
+
+user="""\
+## Overview
+You are a code assistant tasked with converting a Python 3 test file to Python 2. Your goal is to analyze the given test file and transform it accurately.
+
+Source File
+Below is the source file named `{{ source_file_name }}`, with line numbers added for clarity. These numbers are not part of the original code.
+
+=========
+{{ source_file|trim }}
+=========
+
+Conversion Requirements
+To ensure an accurate conversion from Python 3 to Python 2, consider the following guidelines:
+
+1. Print Statements: Convert `print()` function calls to `print` statements.
+   - Python 3: `print("Hello, World!")`
+   - Python 2: `print "Hello, World!"`
+
+2. Division: Adjust division operations to ensure correct integer division.
+   - Python 3: `5 / 2` (results in 2.5)
+   - Python 2: `5 / 2` (results in 2, use `5 / 2.0` for float division)
+
+3. Unicode Strings Use `u""` for Unicode strings.
+   - Python 3: `s = "text"`
+   - Python 2: `s = u"text"`
+
+4. Exception Handling Adjust exception handling syntax.
+   - Python 3: `except Exception as e:`
+   - Python 2: `except Exception, e:`
+
+5. xrange(): Replace `range()` with `xrange()` for loops where applicable.
+   - Python 3: `for i in range(10):`
+   - Python 2: `for i in xrange(10):`
+
+6. Input: Use `raw_input()` instead of `input()`.
+   - Python 3: `input("Enter something: ")`
+   - Python 2: `raw_input("Enter something: ")`
+
+ Response
+The output must be python 2 code:
+
+Response (should be a valid Python 2, and nothing else):
+
+"""
+
+

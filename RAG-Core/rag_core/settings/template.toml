@@ -1,0 +1,20 @@
+[template]
+system="""\
+System prompt goes here.
+"""
+
+user="""\
+## Overview
+You are a code assistant.
+
+Source File
+Below is the source file named `{{ source_file_name }}`. 
+
+=========
+{{ source_file|trim }}
+=========
+
+
+"""
+
+
